@@ -133,3 +133,8 @@
   font-family: Oi;
   -webkit-text-stroke: 4px #000000;
 }
+
+.span{
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 4px #ffffff;
+}

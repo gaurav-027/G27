@@ -1,23 +1,18 @@
 import React from 'react'
-import Ribbons from './components/Ribbons'
-import Hero from './section/Hero'
+import NotFound from './section/NotFound'
+import {BrowserRouter as Router, Route, Routes } from 'react-router-dom'
+import Portfolio from './layout/Portfolio'
 
 export default function App() {
   return (
-    <div className='h-screen w-screen relative'>
-      <div className='h-full bg-transparent absolute top-0 left-0 w-full'>
-       <Ribbons
-    baseThickness={10}
-    colors={["#5227FF"]}
-    speedMultiplier={0.5}
-    maxAge={500}
-    enableFade={false}
-    enableShaderEffect={false}
-  />
-      </div>
-      <div>
-        <Hero/>
-      </div>
-    </div>
+    <>
+      <Router>
+          <Routes>
+            <Route path='/' element={<Portfolio />} />
+            <Route path='*' element={<NotFound />} />
+          </Routes>
+      </Router>
+      
+    </>
   )
 }
