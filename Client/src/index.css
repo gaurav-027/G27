@@ -138,3 +138,8 @@
   -webkit-text-fill-color: transparent;
   -webkit-text-stroke: 4px #ffffff;
 }
+
+body{
+  background-color: #000000;
+  color: #ffffff;
+}

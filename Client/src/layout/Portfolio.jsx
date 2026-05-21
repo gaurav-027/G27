@@ -5,6 +5,7 @@ import Menu from '../section/Menu'
 import Word from '../section/Word'
 import About from '../section/About'
 import Signature from '../section/Signature'
+import Project from '../section/Project'
 
 export default function Portfolio() {
   return (
@@ -14,6 +15,7 @@ export default function Portfolio() {
         </MenuProvider>
         <Word/>
         <About/>
+        <Project/>
         <Signature/>
     </>
   )

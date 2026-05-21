@@ -40,7 +40,7 @@ export default function Menu() {
 
         <Parse/>
       <div className="w-full h-screen bg-black">
-        <div className="w-full h-1/8 flex justify-between items-center p-2">
+        <div className="w-full h-1/7 flex justify-between items-center p-2">
           <h1 className="text-white text-6xl">Menu</h1>
           <div onClick={toggleMenu}>
             <XIcon color="white" size={60} />
