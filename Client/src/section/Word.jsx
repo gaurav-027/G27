@@ -36,7 +36,7 @@ export default function Word() {
   })
   return (
     <>
-      <div className="slide w-full h-screen bg-white/10 flex items-center overflow-hidden">
+      <div className="slide w-full h-screen bg-black flex items-center overflow-hidden">
         <div className="w-full h-full flex flex-col justify-center">
           <div className="slideRight w-full h-1/5 flex item-center gap-12">
             <span className="text-8xl text-white font-extrabold">
