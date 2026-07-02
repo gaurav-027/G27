@@ -998,7 +998,6 @@ export default function InfiniteMenu({ items = [], scale = 1.0 }) {
               : 'opacity-100 pointer-events-auto duration-[500ms]'
           }
         `}>
-            {activeItem.title}
           </h2>
 
           <p
@@ -1017,7 +1016,6 @@ export default function InfiniteMenu({ items = [], scale = 1.0 }) {
               : 'opacity-100 pointer-events-auto duration-[500ms] translate-x-[-90%] -translate-y-1/2'
           }
         `}>
-            {activeItem.description}
           </p>
 
           <div

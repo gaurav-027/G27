@@ -3,7 +3,7 @@ import TextPressure from '../components/TextPressure'
 
 export default function Signature() {
   return (
-    <div className='bg-black rounded-t-[80px] border-t-2 '>
+    <div className='bg-black rounded-t-[80px] border-t-2 px-20'>
   <TextPressure
     text="GAURAV"
     flex

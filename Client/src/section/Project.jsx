@@ -1,33 +1,28 @@
 import React from 'react'
-import LightRays from '../components/LightRays'
 import InfiniteMenu from '../components/InfiniteMenu'
 
 export default function Project() {
 
   const items = [
   {
-    image: 'https://picsum.photos/300/300?grayscale',
-    link: '/hello',
-    title: 'Lancerflow',
-    description: 'hheeeeeee'
+    image: '/project1.png',
+    link: '/projects/lancerflow',
   },
   {
-    image: 'https://picsum.photos/400/400?grayscale',
-    link: 'https://google.com/',
-    title: 'VIDIO',
-    description: 'Haaaaaa'
+    image: '/project2.png',
+    link: '/projects/xitamin',
   },
   {
-    image: 'https://picsum.photos/500/500?grayscale',
-    link: 'https://google.com/',
-    title: 'G27',
-    description: 'Heeyyyyyyyy'
+    image: '/project3.png',
+    link: '/projects/vidio',
   },
   {
-    image: 'https://picsum.photos/600/600?grayscale',
-    link: 'https://google.com/',
-    title: 'Wanderlust',
-    description: 'Hoooooooo'
+    image: '/project5.png',
+    link: '/projects/g27',
+  },
+  {
+    image: '/project4.png',
+    link: '/projects/wanderlust',
   }
 ];
 
@@ -35,23 +30,6 @@ export default function Project() {
     <>
 
     <div className='relative w-ful h-screen'>
-      <div className='w-full h-full absolute top-0'>
-        <LightRays
-          raysOrigin="top-center"
-          raysColor="#ffffff"
-          raysSpeed={1}
-          lightSpread={0.5}
-          rayLength={3}
-          followMouse={true}
-          mouseInfluence={0.1}
-          noiseAmount={0}
-          distortion={0}
-          className="custom-rays"
-          pulsating={false}
-          fadeDistance={1}
-          saturation={1}
-      />
-</div>
 <div className='h-full  absolute top-0'>
   <InfiniteMenu items={items}
     scale={1}
