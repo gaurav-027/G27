@@ -3,9 +3,28 @@ import React from "react";
 import Menu from "./Menu";
 import { useContext } from "react";
 import { MenuContext } from "../Context/MenuContext";
+import Demo2 from "./Demo2";
+import gsap from "gsap";
+import {useGSAP} from "@gsap/react"
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 export default function Hero() {
   const { showMenu, setShowMenu } = useContext(MenuContext);
+
+  useGSAP(() => { 
+    const main = window.document.querySelector(".character-bg")
+
+    main?.addEventListener("mousemove",(e)=>{
+      const xMove = (e.clientX / window.innerWidth - 0.5) * 40;
+      const yMove = (e.clientY / window.innerHeight - 0.5) * 40;
+      gsap.to(main,{
+        x: xMove,
+        y: yMove
+      })
+    })
+  })
 
   const toggleMenu = () => {
     setShowMenu(!showMenu);
@@ -26,15 +45,19 @@ export default function Hero() {
       {showMenu ? (
         <Menu />
       ) : (
-        <section
-          className="home bg-black w-full h-screen overflow-hidden"
+        <div className="relative">
+          <section className="absolute inset-0 z-50 w-full h-screen character-bg">
+            <Demo2/>
+          </section>
+          <section
+          className="home bg-black w-full h-screen overflow-hidden relative"
           id="home"
         >
           <nav className="p-3 md:p-4 flex justify-between items-center">
             <h1 className="h1 text-4xl sm:text-5xl md:text-6xl text-taupe-50">
               G27
             </h1>
-            <div onClick={toggleMenu} className="cursor-pointer">
+            <div onClick={toggleMenu} className="cursor-pointer relative z-50">
               <MenuIcon
                 color="white"
                 size={window.innerWidth < 640 ? 40 : 60}
@@ -72,6 +95,7 @@ export default function Hero() {
             </div>
           </div>
         </section>
+        </div>
       )}
     </>
   );
