@@ -3,8 +3,29 @@ import { useEffect, useRef } from "react";
 import normal from "../assets/helmet1.png";
 import helmet from "../assets/normal1.png";
 import Dock from "../components/Dock";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
 
 export default function Hero() {
+
+  useGSAP(()=>{
+    gsap.from(".textRight",{
+      x:-100,
+      duration:1,
+      smoothOrigin:true
+    })
+    gsap.from(".textLeft",{
+      x:100,
+      duration:1,
+      smoothOrigin:true
+    })
+    gsap.from(".dock",{
+      y:100,
+      duration:1,
+      smoothOrigin:true
+    })
+  })
+
   const containerRef = useRef(null);
   const baseImageRef = useRef(null);
   const revealRef = useRef(null);
@@ -315,15 +336,15 @@ export default function Hero() {
         }}
       />
     </div>
-    <div className="w-screen h-18 absolute bottom-8">
+    <div className="dock w-screen h-18 absolute bottom-8">
       <Dock/>
     </div>
-    <div className="w-screen absolute top-90 px-10 flex justify-between">
-      <div className="px-15">
+    <div className="text w-screen font-thin absolute top-90 px-10 flex justify-between">
+      <div className="textRight px-15">
         <p className="text-5xl">Hello World.</p>
-         <p className="text-5xl font-thin">This is Gaurav <br/> Here..!</p>
+         <p className="text-5xl">This is Gaurav <br/> Here..!</p>
       </div>
-      <div className="px-15">
+      <div className="textLeft px-15">
         <p className="text-5xl text-right">And I am a</p>
          <p className="text-5xl text-right">Full Stack Web <br/> Developer</p>
       </div>

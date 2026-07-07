@@ -46,7 +46,7 @@ export default function Hero() {
         <Menu />
       ) : (
         <div className="relative h-screen">
-          <section className="absolute inset-0 z-50 w-full h-screen character-bg scale-110">
+          <section className="character-bg absolute inset-0 z-50 w-full h-screen scale-110">
             <Character/>
           </section>
           <section
