@@ -3,7 +3,7 @@ import React from "react";
 import Menu from "./Menu";
 import { useContext } from "react";
 import { MenuContext } from "../Context/MenuContext";
-import Demo2 from "./Demo2";
+import Character from "./Character";
 import gsap from "gsap";
 import {useGSAP} from "@gsap/react"
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -17,8 +17,8 @@ export default function Hero() {
     const main = window.document.querySelector(".character-bg")
 
     main?.addEventListener("mousemove",(e)=>{
-      const xMove = (e.clientX / window.innerWidth - 0.5) * 40;
-      const yMove = (e.clientY / window.innerHeight - 0.5) * 40;
+      const xMove = (e.clientX / window.innerWidth - 0.5) * 20;
+      const yMove = (e.clientY / window.innerHeight - 0.5) * 20;
       gsap.to(main,{
         x: xMove,
         y: yMove
@@ -45,9 +45,9 @@ export default function Hero() {
       {showMenu ? (
         <Menu />
       ) : (
-        <div className="relative">
-          <section className="absolute inset-0 z-50 w-full h-screen character-bg">
-            <Demo2/>
+        <div className="relative h-screen">
+          <section className="absolute inset-0 z-50 w-full h-screen character-bg scale-110">
+            <Character/>
           </section>
           <section
           className="home bg-black w-full h-screen overflow-hidden relative"
@@ -66,10 +66,10 @@ export default function Hero() {
           </nav>
 
           <div className="w-full flex flex-col justify-center gap-16 md:gap-24 lg:gap-30 h-[calc(100vh-80px)] overflow-hidden">
-            <div className="group w-[220vw] sm:w-[180vw] md:w-[150vw] bg-[#d8ff04] relative right-20 sm:right-24 md:right-25 h-[12vh] sm:h-[14vh] md:h-1/6 -rotate-20 overflow-hidden flex items-center">
+            <div className="group w-[220vw] sm:w-[180vw] md:w-[150vw] bg-[#d8ff04] relative right-20 sm:right-24 md:right-25 h-[12vh] sm:h-[14vh] md:h-1/8 -rotate-20 overflow-hidden flex items-center">
               <div
                 className="flex whitespace-nowrap group-hover:[animation-play-state:paused]"
-                style={{ animation: "marquee 20s linear infinite" }}
+                style={{ animation: "marquee 30s linear infinite" }}
               >
                 <span className="text-black font-bold text-3xl sm:text-4xl md:text-5xl px-8">
                   CREATIVE STUDIO • BRANDING • DESIGN • DEVELOPMENT •
@@ -80,10 +80,10 @@ export default function Hero() {
               </div>
             </div>
 
-            <div className="group w-[220vw] sm:w-[180vw] md:w-[150vw] h-[12vh] sm:h-[14vh] md:h-1/6 bg-[#d8ff04] rotate-20 relative right-20 sm:right-24 md:right-25 -top-6 sm:-top-8 md:-top-10 overflow-hidden flex items-center">
+            <div className="group w-[220vw] sm:w-[180vw] md:w-[150vw] h-[12vh] sm:h-[14vh] md:h-1/8 bg-[#d8ff04] rotate-20 relative right-20 sm:right-24 md:right-25 -top-6 sm:-top-8 md:-top-10 overflow-hidden flex items-center">
               <div
                 className="flex whitespace-nowrap group-hover:[animation-play-state:paused]"
-                style={{ animation: "marqueeReverse 20s linear infinite" }}
+                style={{ animation: "marqueeReverse 30s linear infinite" }}
               >
                 <span className="text-black font-bold text-3xl sm:text-4xl md:text-5xl px-8">
                   DIGITAL EXPERIENCES • INTERACTIVE • MOTION • INNOVATION •

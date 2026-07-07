@@ -9,7 +9,7 @@ import String from '../components/String'
 
 export default function Portfolio() {
   return (
-    <>
+    <div className='overflow-hidden'>
         <MenuProvider>
             <Hero/>
         </MenuProvider>
@@ -18,6 +18,6 @@ export default function Portfolio() {
         <About/>
         <Project/>
         <Signature/>
-    </>
+    </div>
   )
 }
