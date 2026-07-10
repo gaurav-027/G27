@@ -10,14 +10,14 @@ import String from '../components/String'
 export default function Portfolio() {
   return (
     <div className='overflow-hidden'>
-        <MenuProvider>
+        {/* <MenuProvider>
             <Hero/>
         </MenuProvider>
-        <Word/>
-        <String/>
+        <Word/> */}
+        {/* <String/> */}
         <About/>
-        <Project/>
-        <Signature/>
+        {/* <Project/>
+        <Signature/> */}
     </div>
   )
 }

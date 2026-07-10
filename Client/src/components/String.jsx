@@ -23,7 +23,7 @@ export default function String() {
 
   return (
     <div onMouseMove={mouseMove} onMouseLeave={mouseLeave} className="curveBox w-full p-5">
-      <svg width="100%" height="200">
+      <svg width="100%" height="150">
         <path
           d="M 10 100 Q 650 100 1400 100"
           stroke="white"
