@@ -66,10 +66,10 @@ export default function Hero() {
           </nav>
 
           <div className="w-full flex flex-col justify-center gap-16 md:gap-24 lg:gap-30 h-[calc(100vh-80px)] overflow-hidden">
-            <div className="group w-[220vw] sm:w-[180vw] md:w-[150vw] bg-[#d8ff04] relative right-20 sm:right-24 md:right-25 h-[12vh] sm:h-[14vh] md:h-1/8 -rotate-20 overflow-hidden flex items-center">
+            <div className="group w-[220vw] sm:w-[180vw] md:w-[150vw] bg-[#7b8e0e] relative right-20 sm:right-24 md:right-25 h-[12vh] sm:h-[14vh] md:h-1/8 -rotate-20 overflow-hidden flex items-center">
               <div
                 className="flex whitespace-nowrap group-hover:[animation-play-state:paused]"
-                style={{ animation: "marquee 30s linear infinite" }}
+                style={{ animation: "marquee 50s linear infinite" }}
               >
                 <span className="text-black font-bold text-3xl sm:text-4xl md:text-5xl px-8">
                   CREATIVE STUDIO • BRANDING • DESIGN • DEVELOPMENT •
@@ -80,10 +80,10 @@ export default function Hero() {
               </div>
             </div>
 
-            <div className="group w-[220vw] sm:w-[180vw] md:w-[150vw] h-[12vh] sm:h-[14vh] md:h-1/8 bg-[#d8ff04] rotate-20 relative right-20 sm:right-24 md:right-25 -top-6 sm:-top-8 md:-top-10 overflow-hidden flex items-center">
+            <div className="group w-[220vw] sm:w-[180vw] md:w-[150vw] h-[12vh] sm:h-[14vh] md:h-1/8 bg-[#7b8e0e] rotate-20 relative right-20 sm:right-24 md:right-25 -top-6 sm:-top-8 md:-top-10 overflow-hidden flex items-center">
               <div
                 className="flex whitespace-nowrap group-hover:[animation-play-state:paused]"
-                style={{ animation: "marqueeReverse 30s linear infinite" }}
+                style={{ animation: "marqueeReverse 50s linear infinite" }}
               >
                 <span className="text-black font-bold text-3xl sm:text-4xl md:text-5xl px-8">
                   DIGITAL EXPERIENCES • INTERACTIVE • MOTION • INNOVATION •
@@ -93,6 +93,12 @@ export default function Hero() {
                 </span>
               </div>
             </div>
+          </div>
+        </section>
+        <section className="absolute top-0 w-screen h-screen flex justify-center">
+          <div className="relative top-20 leading-[0.9]">
+            <p className="text-[35vh] font-bold text-transparent [-webkit-text-stroke:6px_white]">GAURAV</p>
+            <p className="text-[35vh] font-bold">KUMAAR</p>
           </div>
         </section>
         </div>
