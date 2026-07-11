@@ -9,16 +9,6 @@ import { useGSAP } from "@gsap/react";
 export default function Hero() {
 
   useGSAP(()=>{
-    gsap.from(".textRight",{
-      x:-100,
-      duration:1,
-      smoothOrigin:true
-    })
-    gsap.from(".textLeft",{
-      x:100,
-      duration:1,
-      smoothOrigin:true
-    })
     gsap.from(".dock",{
       y:100,
       duration:1,

@@ -13,22 +13,34 @@ gsap.registerPlugin(ScrollTrigger);
 export default function Hero() {
   const { showMenu, setShowMenu } = useContext(MenuContext);
 
-  useGSAP(() => { 
-    const main = window.document.querySelector(".character-bg")
+useGSAP(() => {
+  const main = document.querySelector(".character-bg");
+  if (!main) return;
 
-    main?.addEventListener("mousemove",(e)=>{
-      const xMove = (e.clientX / window.innerWidth - 0.5) * 20;
-      const yMove = (e.clientY / window.innerHeight - 0.5) * 20;
-      gsap.to(main,{
-        x: xMove,
-        y: yMove
-      })
-    })
-  })
+  const handleMove = (e) => {
+    const xMove = (e.clientX / window.innerWidth - 0.5) * 20;
+    const yMove = (e.clientY / window.innerHeight - 0.5) * 20;
+
+    gsap.to(main, {
+      x: xMove,
+      y: yMove,
+      overwrite: "auto",
+    });
+  };
+
+  main.addEventListener("mousemove", handleMove);
+
+  return () => {
+    main.removeEventListener("mousemove", handleMove);
+  };
+}, []);
 
   const toggleMenu = () => {
     setShowMenu(!showMenu);
   };
+
+  const iconSize = window.innerWidth < 640 ? 40 : 60;
+
   return (
     <>
       <style>{`
@@ -60,7 +72,7 @@ export default function Hero() {
             <div onClick={toggleMenu} className="cursor-pointer relative z-50">
               <MenuIcon
                 color="white"
-                size={window.innerWidth < 640 ? 40 : 60}
+                size={iconSize}
               />
             </div>
           </nav>

@@ -27,7 +27,7 @@ export default function String() {
         <path
           d="M 10 100 Q 650 100 1400 100"
           stroke="white"
-          fill="transparent"
+      
           strokeWidth="2"
           strokeLinecap="round"
         />

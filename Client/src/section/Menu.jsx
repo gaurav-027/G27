@@ -4,6 +4,7 @@ import { XIcon } from "../components/ui/x-icon";
 import { useContext } from "react";
 import { MenuContext } from "../Context/MenuContext";
 import Parse from "../animation/Parse";
+import { useEffect } from "react";
 
 export default function Menu() {
   const { showMenu, setShowMenu } = useContext(MenuContext);
@@ -34,6 +35,7 @@ export default function Menu() {
       image: "https://picsum.photos/600/400?random=4",
     },
   ];
+
 
   return (
     <>

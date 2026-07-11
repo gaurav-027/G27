@@ -8,8 +8,8 @@ export default function Dock() {
             {
                 dockItems.map((item,index)=>{
                     return (
-                        <div key={index} className='w-1/7 flex justify-center items-center cursor-pointer'>
-                            <p className='text-white/70'>{item.icon}</p>
+                        <div key={index} className='text-white/50 w-1/7 flex justify-center items-center cursor-pointer'>
+                            {item.icon}
                         </div>
                     )
                 })
