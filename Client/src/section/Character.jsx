@@ -6,7 +6,7 @@ import Dock from "../components/Dock";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 
-export default function Hero() {
+export default function Character() {
 
   useGSAP(()=>{
     gsap.from(".dock",{
@@ -61,7 +61,7 @@ export default function Hero() {
 
     const measure = () => {
       const rect = container.getBoundingClientRect();
-      targetRadiusRef.current = Math.min(Math.max(rect.width * 0.2, 180), 150);
+      targetRadiusRef.current = Math.min(Math.max(rect.width * 0.2, 90), 150);
 
       if (baseImage.naturalWidth && baseImage.naturalHeight) {
         const imageRatio = baseImage.naturalWidth / baseImage.naturalHeight;
@@ -161,8 +161,22 @@ export default function Hero() {
       hoverRef.current = false;
     };
 
+    const handlePointerDown = (e) => {
+      const point = setPointerPosition(e);
+
+      if (hoverRef.current) {
+        smoothRef.current = { ...point };
+        trailRef.current = trailRef.current.map(() => ({ ...point }));
+        velocityRef.current = { x: 0, y: 0 };
+        initializedRef.current = true;
+      }
+    };
+
     container.addEventListener("pointermove", handleMove, { passive: true });
+    container.addEventListener("pointerdown", handlePointerDown, { passive: true });
     container.addEventListener("pointerleave", handleLeave);
+    container.addEventListener("pointercancel", handleLeave);
+    container.addEventListener("pointerup", handleLeave);
     baseImage.addEventListener("load", buildHitCanvas);
     window.addEventListener("resize", measure);
 
@@ -255,7 +269,10 @@ export default function Hero() {
       cancelAnimationFrame(raf);
 
       container.removeEventListener("pointermove", handleMove);
+      container.removeEventListener("pointerdown", handlePointerDown);
       container.removeEventListener("pointerleave", handleLeave);
+      container.removeEventListener("pointercancel", handleLeave);
+      container.removeEventListener("pointerup", handleLeave);
       baseImage.removeEventListener("load", buildHitCanvas);
       window.removeEventListener("resize", measure);
     };
@@ -265,14 +282,14 @@ export default function Hero() {
     <>
       <div
       ref={containerRef}
-      className="relative w-full h-screen overflow-hidden"
+      className="relative w-full h-[100svh] min-h-[520px] overflow-hidden"
     >
       {/* Base Image */}
       <img
         ref={baseImageRef}
         src={normal}
         alt=""
-        className="absolute inset-0 w-full h-full object-contain pointer-events-none select-none"
+        className="absolute inset-0 w-full h-full object-contain object-center pointer-events-none select-none"
       />
 
       {trailRef.current.map((_, index) => (
@@ -283,7 +300,7 @@ export default function Hero() {
           }}
           src={helmet}
           alt=""
-          className="absolute inset-0 w-full h-full object-contain pointer-events-none select-none will-change-[clip-path,opacity]"
+          className="absolute inset-0 w-full h-full object-contain object-center pointer-events-none select-none will-change-[clip-path,opacity]"
           style={{
             clipPath: "circle(0px at 0px 0px)",
             WebkitClipPath: "circle(0px at 0px 0px)",
@@ -300,7 +317,7 @@ export default function Hero() {
         ref={revealRef}
         src={helmet}
         alt=""
-        className="absolute inset-0 w-full h-full object-contain pointer-events-none select-none will-change-[clip-path]"
+        className="absolute inset-0 w-full h-full object-contain object-center pointer-events-none select-none will-change-[clip-path]"
         style={{
           clipPath: "circle(0px at 0px 0px)",
           WebkitClipPath: "circle(0px at 0px 0px)",
@@ -326,7 +343,7 @@ export default function Hero() {
         }}
       />
     </div>
-    <div className="dock w-screen h-18 absolute bottom-8">
+    <div className="dock w-full h-14 sm:h-16 md:h-18 absolute inset-x-0 bottom-[max(1rem,env(safe-area-inset-bottom))] sm:bottom-8 px-4">
       <Dock/>
     </div>
     </>

@@ -5,7 +5,7 @@ import Word from '../section/Word'
 import About from '../section/About'
 import Signature from '../section/Signature'
 import Project from '../section/Project'
-import String from '../components/String'
+import Message from '../section/Message'
 
 export default function Portfolio() {
   return (
@@ -14,9 +14,9 @@ export default function Portfolio() {
             <Hero/>
         </MenuProvider>
         <Word/> 
-        {/* <String/> */}
-        <About/>
-        <Project/>
+        <Message/>
+        {/* <About/>
+        <Project/> */}
         <Signature/>
     </div>
   )

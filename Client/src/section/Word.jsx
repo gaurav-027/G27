@@ -15,8 +15,7 @@ export default function Word() {
       ease: "none",
       scrollTrigger: {
         trigger: ".slide",
-        start: "top top",
-        end: "+=1000",
+        start: "top 40%",
         scrub: true,
       },
     });
@@ -28,8 +27,7 @@ export default function Word() {
 
       scrollTrigger: {
         trigger: ".slide",
-        start: "top top",
-        end: "+=1000",
+        start: "top 40%",
         scrub: true,
       },
     });

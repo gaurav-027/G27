@@ -39,8 +39,6 @@ useGSAP(() => {
     setShowMenu(!showMenu);
   };
 
-  const iconSize = window.innerWidth < 640 ? 40 : 60;
-
   return (
     <>
       <style>{`
@@ -57,60 +55,59 @@ useGSAP(() => {
       {showMenu ? (
         <Menu />
       ) : (
-        <div className="relative h-screen">
-          <section className="character-bg absolute inset-0 z-50 w-full h-screen scale-110">
+        <div className="relative h-[100svh] min-h-[520px] overflow-hidden">
+          <section className="character-bg absolute inset-0 z-50 w-full h-[100svh] min-h-[520px] scale-100 sm:scale-105 lg:scale-110">
             <Character/>
           </section>
           <section
-          className="home bg-black w-full h-screen overflow-hidden relative"
+          className="home bg-black w-full h-[100svh] min-h-[520px] overflow-hidden relative"
           id="home"
         >
-          <nav className="p-3 md:p-4 flex justify-between items-center">
-            <h1 className="h1 text-4xl sm:text-5xl md:text-6xl text-taupe-50">
+          <nav className="relative z-[60] p-3 md:p-4 flex justify-between items-center">
+            <h1 className="h1 text-[clamp(2.25rem,8vw,3.75rem)] text-taupe-50">
               G27
             </h1>
-            <div onClick={toggleMenu} className="cursor-pointer relative z-50">
+            <button
+              type="button"
+              onClick={toggleMenu}
+              aria-label="Open menu"
+              className="cursor-pointer relative z-50 inline-flex items-center justify-center bg-transparent border-0 p-0 text-white"
+            >
               <MenuIcon
                 color="white"
-                size={iconSize}
+                size="clamp(40px, 8vw, 60px)"
               />
-            </div>
+            </button>
           </nav>
 
-          <div className="w-full flex flex-col justify-center gap-16 md:gap-24 lg:gap-30 h-[calc(100vh-80px)] overflow-hidden">
-            <div className="group w-[220vw] sm:w-[180vw] md:w-[150vw] bg-[#7b8e0e] relative right-20 sm:right-24 md:right-25 h-[12vh] sm:h-[14vh] md:h-1/8 -rotate-20 overflow-hidden flex items-center">
+          <div className="w-full flex flex-col justify-center gap-[clamp(3.25rem,10vh,7.5rem)] h-[calc(100svh-80px)] min-h-[440px] overflow-hidden">
+            <div className="group w-[260vw] sm:w-[190vw] md:w-[160vw] lg:w-[150vw] bg-[#7b8e0e] relative right-[32vw] sm:right-24 md:right-25 h-[clamp(4.75rem,12vh,8rem)] sm:h-[clamp(5.5rem,14vh,8.75rem)] md:h-1/8 -rotate-20 overflow-hidden flex items-center">
               <div
                 className="flex whitespace-nowrap group-hover:[animation-play-state:paused]"
                 style={{ animation: "marquee 50s linear infinite" }}
               >
-                <span className="text-black font-bold text-3xl sm:text-4xl md:text-5xl px-8">
-                  CREATIVE STUDIO • BRANDING • DESIGN • DEVELOPMENT •
-                </span>
-                <span className="text-black font-bold text-3xl sm:text-4xl md:text-5xl px-8">
-                  CREATIVE STUDIO • BRANDING • DESIGN • DEVELOPMENT •
+                <span className="text-black text-[clamp(1.75rem,7vw,3rem)] md:text-5xl px-8">
+                  React.js ✦ Next.js ✦ JavaScript ✦ Node.js ✦ Express.js ✦ MongoDB ✦ MySQL ✦ Tailwind CSS ✦ GSAP  ✦ Three.js ✦ Git ✦ GitHub ✦ REST APIs ✦ Docker ✦ AWS ✦
                 </span>
               </div>
             </div>
 
-            <div className="group w-[220vw] sm:w-[180vw] md:w-[150vw] h-[12vh] sm:h-[14vh] md:h-1/8 bg-[#7b8e0e] rotate-20 relative right-20 sm:right-24 md:right-25 -top-6 sm:-top-8 md:-top-10 overflow-hidden flex items-center">
+            <div className="group w-[260vw] sm:w-[190vw] md:w-[160vw] lg:w-[150vw] h-[clamp(4.75rem,12vh,8rem)] sm:h-[clamp(5.5rem,14vh,8.75rem)] md:h-1/8 bg-[#7b8e0e] rotate-20 relative right-[32vw] sm:right-24 md:right-25 -top-6 sm:-top-8 md:-top-10 overflow-hidden flex items-center">
               <div
                 className="flex whitespace-nowrap group-hover:[animation-play-state:paused]"
                 style={{ animation: "marqueeReverse 50s linear infinite" }}
               >
-                <span className="text-black font-bold text-3xl sm:text-4xl md:text-5xl px-8">
-                  DIGITAL EXPERIENCES • INTERACTIVE • MOTION • INNOVATION •
-                </span>
-                <span className="text-black font-bold text-3xl sm:text-4xl md:text-5xl px-8">
-                  DIGITAL EXPERIENCES • INTERACTIVE • MOTION • INNOVATION •
+                <span className="text-black text-[clamp(1.75rem,7vw,3rem)] md:text-5xl px-8">
+                  Full Stack Development ✦ Responsive UI ✦ Modern Web Apps ✦ REST API Development ✦ Database Design ✦ Authentication ✦ Performance Optimization ✦ Clean Code ✦ Problem Solving ✦ UI/UX Focus ✦ AI-Powered Applications ✦ Open to Freelance ✦ Open to Full-Time
                 </span>
               </div>
             </div>
           </div>
         </section>
-        <section className="absolute top-0 w-screen h-screen flex justify-center">
-          <div className="relative top-20 leading-[0.9]">
-            <p className="text-[35vh] font-bold text-transparent [-webkit-text-stroke:6px_white]">GAURAV</p>
-            <p className="text-[35vh] font-bold">KUMAAR</p>
+        <section className="pointer-events-none absolute top-0 z-10 w-full h-[100svh] min-h-[520px] flex justify-center overflow-hidden px-2">
+          <div className="relative top-[clamp(4.5rem,11vh,5rem)] leading-[0.9] text-center">
+            <p className="text-[clamp(5rem,22vw,35vh)] font-bold text-transparent [-webkit-text-stroke:clamp(2px,0.45vw,6px)_white]">GAURAV</p>
+            <p className="text-[clamp(5rem,22vw,35vh)] font-bold">KUMAAR</p>
           </div>
         </section>
         </div>
