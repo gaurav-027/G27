@@ -1,5 +1,4 @@
 import React from 'react'
-import { MenuProvider } from '../Context/MenuContext'
 import Hero from '../section/Hero'
 import Word from '../section/Word'
 import About from '../section/About'
@@ -10,13 +9,11 @@ import Message from '../section/Message'
 export default function Portfolio() {
   return (
     <div className='overflow-hidden'>
-        <MenuProvider>
-            <Hero/>
-        </MenuProvider>
+        <Hero/>
         <Word/> 
-        <Message/>
-        {/* <About/>
-        <Project/> */}
+        {/* <Message/> */}
+        <About/>
+        <Project/>
         <Signature/>
     </div>
   )

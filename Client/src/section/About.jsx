@@ -59,13 +59,13 @@ export default function About() {
     <div id="about" className="bg-[#0c0c0f]">
       <div className="w-full flex">
         <div ref={sectionRef} className="w-1/2 h-full">
-          <div className="border w-80 h-80 relative left-15 top-5 bg-amber-300 rounded-2xl">
+          <div className="border w-80 h-80 relative left-15 top-5 bg-amber-300 rounded-2xl transition-all">
             <img ref={firstImageRef} className="w-full h-full object-contain rounded-2xl" src="https://picsum.photos/400/400" alt="" />
           </div>
-          <div className="border w-80 h-80 relative left-80 bottom-23 bg-amber-900 rounded-2xl">
+          <div className="border w-80 h-80 relative left-80 bottom-23 bg-amber-900 rounded-2xl transition-all">
             <img ref={secondImageRef} className="w-full h-full object-contain rounded-2xl" src="https://picsum.photos/400/400" alt="" />
           </div>
-          <div className="border w-80 h-80 relative left-15 bottom-53 bg-black rounded-2xl">
+          <div className="border w-80 h-80 relative left-15 bottom-53 bg-black rounded-2xl transition-all">
             <img ref={thirdImageRef} className="w-full h-full object-contain rounded-2xl" src="https://picsum.photos/400/400" alt="" />
           </div>
         </div>
@@ -88,13 +88,7 @@ export default function About() {
               </h1>
             </div>
           </div>
-          <p className="text-[10vh]">asbdjad</p>
-          <p className="text-[10vh]">asbdjadhbjabdhjbasdd</p>
-          <p className="text-[10vh]">asbdjadhbjabdhjbasdd</p>
-
-          <p className="text-[10vh]">asbdjadhbjabdhjbasdd</p>
-          <p className="text-[10vh]">asbdjadhbjabdhjbasdd</p>
-          <p className="text-[10vh]">asbdjadhbjabdhjbasdd</p>
+          <div className="border mt-10"></div>
         </div>
       </div>
     </div>
