@@ -69,7 +69,7 @@ useGSAP(()=>{
           </nav>
 
           <div className="w-full flex flex-col justify-center gap-[clamp(3.25rem,10vh,7.5rem)] h-[calc(100svh-80px)] min-h-[440px] overflow-hidden">
-            <div className="group w-[260vw] sm:w-[190vw] md:w-[160vw] lg:w-[150vw] bg-[#7b8e0e] relative right-[32vw] sm:right-24 md:right-25 h-[clamp(4.75rem,12vh,8rem)] sm:h-[clamp(5.5rem,14vh,8.75rem)] md:h-1/8 -rotate-20 overflow-hidden flex items-center">
+            <div className="group w-[260vw] sm:w-[190vw] md:w-[160vw] lg:w-[140vw] bg-[#7b8e0e] relative right-[32vw] sm:right-24 md:right-25 h-[clamp(4.75rem,12vh,8rem)] sm:h-[clamp(5.5rem,14vh,8.75rem)] md:h-1/8 -rotate-20 overflow-hidden flex items-center">
               <div
                 className="flex whitespace-nowrap group-hover:[animation-play-state:paused]"
                 style={{ animation: "marquee 60s linear infinite" }}
@@ -80,7 +80,7 @@ useGSAP(()=>{
               </div>
             </div>
 
-            <div className="group w-[260vw] sm:w-[190vw] md:w-[160vw] lg:w-[150vw] h-[clamp(4.75rem,12vh,8rem)] sm:h-[clamp(5.5rem,14vh,8.75rem)] md:h-1/8 bg-[#7b8e0e] rotate-20 relative right-[32vw] sm:right-24 md:right-25 -top-6 sm:-top-8 md:-top-10 overflow-hidden flex items-center">
+            <div className="group w-[260vw] sm:w-[190vw] md:w-[160vw] lg:w-[140vw] h-[clamp(4.75rem,12vh,8rem)] sm:h-[clamp(5.5rem,14vh,8.75rem)] md:h-1/8 bg-[#7b8e0e] rotate-20 relative right-[32vw] sm:right-24 md:right-25 -top-6 sm:-top-8 md:-top-10 overflow-hidden flex items-center">
               <div
                 className="flex whitespace-nowrap group-hover:[animation-play-state:paused]"
                 style={{ animation: "marqueeReverse 70s linear infinite" }}

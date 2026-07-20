@@ -3,6 +3,7 @@ import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/all";
+import SplitType from "split-type";
 
 export default function About() {
 
@@ -12,6 +13,7 @@ export default function About() {
   const firstImageRef = useRef(null);
   const secondImageRef = useRef(null);
   const thirdImageRef = useRef(null);
+  const contentRef = useRef(null);
 
   const imageArray = ["https://picsum.photos/400/400?random=1",
     "https://picsum.photos/400/400?random=2",
@@ -35,24 +37,78 @@ export default function About() {
     "https://picsum.photos/400/400?random=20",
   ]
 
-  useGSAP(()=>{
-    gsap.to(sectionRef.current,{
-      scrollTrigger : {
-        trigger:sectionRef.current,
+  useGSAP(() => {
+    gsap.to(sectionRef.current, {
+      scrollTrigger: {
+        trigger: sectionRef.current,
         start: "top 0%",
-        end:"bottom 0%",
-        pin:true,
-        scrub:true,
-        onUpdate:(e)=>{
+        end: "bottom 0%",
+        pin: true,
+        scrub: true,
+        onUpdate: (e) => {
           console.log(Math.floor(e.progress * 20))
 
           const imageIndex = Math.floor(e.progress * 19)
           firstImageRef.current.src = imageArray[imageIndex];
-          secondImageRef.current.src = imageArray[imageIndex+1]
-          thirdImageRef.current.src = imageArray[imageIndex+2]
+          secondImageRef.current.src = imageArray[imageIndex + 1]
+          thirdImageRef.current.src = imageArray[imageIndex + 2]
         }
       }
-    })
+    });
+
+    // Animate paragraphs with SplitType and GSAP
+    if (!contentRef.current) return;
+    const paragraphs = contentRef.current.querySelectorAll("p");
+
+    paragraphs.forEach((paragraph) => {
+      const split = new SplitType(paragraph, {
+        types: "chars",
+      });
+
+      gsap.set(paragraph, {
+        opacity: 0,
+        y: 60,
+      });
+
+      gsap.to(paragraph, {
+        opacity: 1,
+        y: 0,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: paragraph,
+          start: "top 90%",
+          end: "top 65%",
+          scrub: true,
+        },
+      });
+
+      gsap.set(split.chars, {
+        color: "#555555",
+      });
+
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: paragraph,
+          start: "top 80%",
+          end: "bottom 40%",
+          scrub: true,
+        },
+      });
+
+      tl.to(split.chars, {
+        color: "#ffffff",
+        stagger: {
+          each: 0.08,
+          from: "start",
+        },
+        ease: "none",
+      });
+    });
+    return () => {
+      paragraphs.forEach((paragraph) => {
+        SplitType.revert(paragraph);
+      });
+    };
   })
 
   return (
@@ -88,7 +144,11 @@ export default function About() {
               </h1>
             </div>
           </div>
-          <div className="border mt-10"></div>
+          <div ref={contentRef} className="content mt-15 flex flex-col gap-10 px-5 mb-10">
+            <p className=" text-4xl align-middle">Hi, I’m Gaurav, a passionate Full Stack MERN Developer with a strong interest in building modern, scalable, and user-friendly web applications.</p>
+            <p className="text-4xl"> I’m continuously improving my skills, working on real-world projects, and looking for opportunities where I can contribute, learn, and grow as a Software Developer.</p>
+            <p className="text-4xl">I enjoy solving problems through code, exploring new technologies, and creating applications that deliver a seamless user experience. Every project is an opportunity to learn something new and become a better developer.</p>
+          </div>
         </div>
       </div>
     </div>

@@ -147,3 +147,12 @@ body{
 .text{
   font-family: "Space Grotesk";
 }
+
+.content p {
+  overflow: hidden;
+}
+
+.content .char {
+  display: inline-block;
+  will-change: transform, color;
+}

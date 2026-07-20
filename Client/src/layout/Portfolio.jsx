@@ -5,16 +5,17 @@ import About from '../section/About'
 import Signature from '../section/Signature'
 import Project from '../section/Project'
 import Message from '../section/Message'
+import Skills from '../section/Skills'
 
 export default function Portfolio() {
   return (
     <div className='overflow-hidden'>
-        <Hero/>
+        {/* <Hero/>
         <Word/> 
-        {/* <Message/> */}
-        <About/>
-        <Project/>
-        <Signature/>
+        <About/> */}
+        <Skills/>
+        {/* <Project/>
+        <Signature/> */}
     </div>
   )
 }
