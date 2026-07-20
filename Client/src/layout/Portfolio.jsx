@@ -10,12 +10,12 @@ import Skills from '../section/Skills'
 export default function Portfolio() {
   return (
     <div className='overflow-hidden'>
-        {/* <Hero/>
+        <Hero/>
         <Word/> 
-        <About/> */}
+        <About/>
         <Skills/>
-        {/* <Project/>
-        <Signature/> */}
+        <Project/>
+        <Signature/>
     </div>
   )
 }
