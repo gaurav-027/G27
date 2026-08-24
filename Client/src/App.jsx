@@ -3,8 +3,10 @@ import NotFound from './section/NotFound'
 import {BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import Portfolio from './layout/Portfolio'
 import Project from './layout/Project'
+import { QRCodeCanvas } from "qrcode.react";
 
 export default function App() {
+
   return (
     <>
       <Router>
@@ -14,7 +16,6 @@ export default function App() {
             <Route path='*' element={<NotFound />} />
           </Routes>
       </Router>
-      
     </>
   )
 }
