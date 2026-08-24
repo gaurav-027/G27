@@ -4,44 +4,64 @@ import React, { useEffect, useState } from 'react'
 import { useRef } from 'react';
 import axios from 'axios';
 
+import htmlLogo from "../assets/skills/frontend/html.png"
+import reactLogo from "../assets/skills/frontend/react.png"
+import jsLogo from "../assets/skills/frontend/js.png"
+import cssLogo from "../assets/skills/frontend/css.png"
+import tailwindLogo from "../assets/skills/frontend/tailwind.png"
+import gsapLogo from "../assets/skills/frontend/gsap.png"
+
+import nodeLogo from "../assets/skills/backend/node.png"
+import expressLogo from "../assets/skills/backend/express.png"
+import jwtLogo from "../assets/skills/backend/jwt.png"
+import socketLogo from "../assets/skills/backend/socket.png"
+
+import mongoLogo from "../assets/skills/database/mongodb.png"
+import mysqlLogo from "../assets/skills/database/mysql.png"
+import actionLogo from "../assets/skills/database/actions.png"
+import dockerLogo from "../assets/skills/database/docker.png"
+import hostingerLogo from "../assets/skills/database/hostinger.png"
+import renderLogo from "../assets/skills/database/render.png"
+
+import githubLogo from "../assets/skills/tools/github.png"
+import vscodeLogo from "../assets/skills/tools/vs.png"
+import thunderLogo from "../assets/skills/tools/thunderClient.png"
+
+
 export default function Skills() {
 
     const [quote , setQuote] = useState("");
     const [author, setAuthor] = useState("");
 
-    // ==========================
-    // Import your images above, for example:
-    // import reactLogo from "../assets/skills/frontend/react.png";
-    // import nodeLogo from "../assets/skills/backend/node.png";
-    // ==========================
-
     const frontendImages = [
-      // reactLogo,
-      // htmlLogo,
-      // cssLogo,
-      // jsLogo,
-      // tailwindLogo,
+      reactLogo,
+      htmlLogo,
+      cssLogo,
+      jsLogo,
+      tailwindLogo,
+      gsapLogo
     ];
 
     const backendImages = [
-      // nodeLogo,
-      // expressLogo,
-      // jwtLogo,
-      // socketLogo,
+      nodeLogo,
+      expressLogo,
+      jwtLogo,
+      socketLogo,
     ];
 
     const databaseImages = [
-      // mongoLogo,
-      // mysqlLogo,
-      // firebaseLogo,
+      mongoLogo,
+      mysqlLogo,
+      actionLogo,
+      dockerLogo,
+      hostingerLogo,
+      renderLogo
     ];
 
     const toolsImages = [
-      // gitLogo,
-      // githubLogo,
-      // dockerLogo,
-      // postmanLogo,
-      // vscodeLogo,
+      githubLogo,
+      thunderLogo,
+      vscodeLogo,
     ];
 
     const skills = [
@@ -110,7 +130,7 @@ useGSAP(() => {
     tl.to(
       row,
       {
-        backgroundColor: '#ffffff',
+        backgroundColor: '',
         duration: 0.25,
       },
       0
