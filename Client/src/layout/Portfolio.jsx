@@ -7,16 +7,36 @@ import Project from '../section/Project'
 import Message from '../section/Message'
 import Skills from '../section/Skills'
 import BuildSection from '../section/BuildSection'
+import Lenis from "lenis";
+import { useEffect } from "react";
 
 export default function Portfolio() {
+
+  useEffect(() => {
+    const lenis = new Lenis({
+      smoothWheel: true,
+      duration: 1.2,
+    });
+
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+
+    requestAnimationFrame(raf);
+
+    return () => {
+      lenis.destroy();
+    };
+  }, []);
+
   return (
     <div className='overflow-hidden'>
-        {/* <p className='font-bold text-center text-2xl'>Website is Still Under Development...!</p> */}
-        {/* <Hero/>
+        <Hero/>
         <Word/> 
         <About/>
         <Skills/>
-        <Project/> */}
+        <Project/>
         <BuildSection/>
         <Signature/>
     </div>

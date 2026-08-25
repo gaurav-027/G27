@@ -10,6 +10,10 @@ export default function BuildSection() {
 
     const [isButton, setIsButton] = useState(false);
 
+    const handleClick = () => {
+        console.log("jkdskfnkjsd")
+    }
+
     useGSAP(()=>{
         gsap.to(".btn",{
             y:400,
@@ -33,7 +37,9 @@ export default function BuildSection() {
                 <div>B</div>
                 <div>U</div>
                 <div className={`btn w-15 h-65 bg-white relative top-13 transition-all duration-200 ease-in-out ${isButton ? "rounded-2xl cursor-pointer"  : ""}`}>
-                    {isButton ? <button><span>Contact Me</span></button> : ""}
+                    {isButton ? <div onClick={handleClick} className="border w-full h-full text-2xl font-normal text-black rounded-2xl flex items-center justify-center text-center border-black">
+                        <p className='btntxt rotate-270 font-bold '>Contact Me</p>
+                    </div> : ""}
                 </div>
                 <div>L</div>
                 <div>D</div>
