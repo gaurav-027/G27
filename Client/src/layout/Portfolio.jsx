@@ -11,12 +11,12 @@ export default function Portfolio() {
   return (
     <div className='overflow-hidden'>
         {/* <p className='font-bold text-center text-2xl'>Website is Still Under Development...!</p> */}
-        {/* <Hero/>
+        <Hero/>
         <Word/> 
-        <About/> */}
+        <About/>
         <Skills/>
-        {/* <Project/>
-        <Signature/> */}
+        <Project/>
+        <Signature/>
     </div>
   )
 }

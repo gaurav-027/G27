@@ -15,27 +15,18 @@ export default function About() {
   const thirdImageRef = useRef(null);
   const contentRef = useRef(null);
 
-  const imageArray = ["https://picsum.photos/400/400?random=1",
-    "https://picsum.photos/400/400?random=2",
-    "https://picsum.photos/400/400?random=3",
-    "https://picsum.photos/400/400?random=4",
-    "https://picsum.photos/400/400?random=5",
-    "https://picsum.photos/400/400?random=6",
-    "https://picsum.photos/400/400?random=7",
-    "https://picsum.photos/400/400?random=8",
-    "https://picsum.photos/400/400?random=9",
-    "https://picsum.photos/400/400?random=10",
-    "https://picsum.photos/400/400?random=11",
-    "https://picsum.photos/400/400?random=12",
-    "https://picsum.photos/400/400?random=13",
-    "https://picsum.photos/400/400?random=14",
-    "https://picsum.photos/400/400?random=15",
-    "https://picsum.photos/400/400?random=16",
-    "https://picsum.photos/400/400?random=17",
-    "https://picsum.photos/400/400?random=18",
-    "https://picsum.photos/400/400?random=19",
-    "https://picsum.photos/400/400?random=20",
-  ]
+  const firstImageArray = [];
+  const secondImageArray = [];
+  const thirdImageArray = [];
+
+  useEffect(()=>{
+
+    for(let i=0; i<=60; i++){
+      firstImageArray.push(`https://picsum.photos/400/400?random=${i}`);
+      secondImageArray.push(`https://picsum.photos/400/400?random=${i+10}`);
+      thirdImageArray.push(`https://picsum.photos/400/400?random=${i+20}`); 
+    }
+  },[])
 
   useGSAP(() => {
     gsap.to(sectionRef.current, {
@@ -46,15 +37,21 @@ export default function About() {
         pin: true,
         scrub: true,
         onUpdate: (e) => {
-          console.log(Math.floor(e.progress * 20))
+          // console.log(Math.floor(e.progress * 20))
+
+          const scrollValue = Math.floor(e.progress * 60);
+
+          console.log(scrollValue)
 
           const imageIndex = Math.floor(e.progress * 19)
-          firstImageRef.current.src = imageArray[imageIndex];
-          secondImageRef.current.src = imageArray[imageIndex + 1]
-          thirdImageRef.current.src = imageArray[imageIndex + 2]
+          firstImageRef.current.src = firstImageArray[imageIndex];
+          secondImageRef.current.src = secondImageArray[imageIndex]
+          thirdImageRef.current.src = thirdImageArray[imageIndex]
         }
       }
     });
+
+
 
     // Animate paragraphs with SplitType and GSAP
     if (!contentRef.current) return;
