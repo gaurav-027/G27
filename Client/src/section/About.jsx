@@ -41,8 +41,6 @@ export default function About() {
 
           const scrollValue = Math.floor(e.progress * 60);
 
-          console.log(scrollValue)
-
           const imageIndex = Math.floor(e.progress * 19)
           firstImageRef.current.src = firstImageArray[imageIndex];
           secondImageRef.current.src = secondImageArray[imageIndex]

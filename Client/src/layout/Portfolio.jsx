@@ -6,16 +6,18 @@ import Signature from '../section/Signature'
 import Project from '../section/Project'
 import Message from '../section/Message'
 import Skills from '../section/Skills'
+import BuildSection from '../section/BuildSection'
 
 export default function Portfolio() {
   return (
     <div className='overflow-hidden'>
         {/* <p className='font-bold text-center text-2xl'>Website is Still Under Development...!</p> */}
-        <Hero/>
+        {/* <Hero/>
         <Word/> 
         <About/>
         <Skills/>
-        <Project/>
+        <Project/> */}
+        <BuildSection/>
         <Signature/>
     </div>
   )
