@@ -1,6 +1,7 @@
 import React from 'react'
 import {useParams} from "react-router-dom"
-import projectData from "../constant/Data.js"
+import {projectData} from "../constant/Data.js"
+import {subtitle} from "../constant/Data.js"
 import NotFound from "../section/NotFound.jsx"
 import { EarthIcon } from '../components/ui/earth.jsx'
 import {GithubIcon} from "../components/ui/github.jsx"
@@ -15,6 +16,7 @@ export default function Project() {
     }
 
   return (
+    <>
     <div className='w-full h-screen bg-zinc-950 flex justify-center'>
         <div className='w-2/3 p-5 flex flex-col gap-8'>
             <div className="w-full h-80 rounded-2xl border border-white/50">
@@ -41,25 +43,17 @@ export default function Project() {
             </div>
 
             {
-                project.description.subtitle.map((subtitle,index)=>{
-                    return (
+                subtitle.map((sub,index)=>{
+                    return(
                         <div key={index}>
-                            <p className='text-3xl'>{subtitle}</p>
-                            <p className="text-lg align-super">{project.description.content[index]}</p>
+                            <p className='text-3xl'>{sub}</p>
+                            <p className="text-lg align-super">{project.content[index]}</p>
                         </div>
                     )
                 })
             }
-            <div className="w-full border flex">
-                {
-                    projectData.map((project,index)=>{
-                        return (
-                            <div className="border w-64 h-64"></div>
-                        )
-                    })
-                }
-            </div>
         </div>
     </div>
+    </>
   )
 }

@@ -23,6 +23,14 @@ export default function Project() {
   {
     image: '/project4.png',
     link: '/projects/wanderlust',
+  },
+  {
+    image: '/project6.png',
+    link: '/projects/joybox',
+  },
+  {
+    image: '/project7.png',
+    link: '/projects/manojKirana',
   }
 ];
 
