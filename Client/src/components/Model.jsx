@@ -117,7 +117,7 @@ export default function Model() {
         <directionalLight position={[-3, 2, -4]} intensity={0.8} />
 
         <Bounds fit clip observe margin={0.7}>
-          <CardModel frontImage="/front.jpg" backImage="/back.jpg" />
+          <CardModel frontImage="/frontPart.png" backImage="/backPart.png" />
         </Bounds>
 
         <OrbitControls
