@@ -3,6 +3,7 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import {useState} from "react";
+import { useNavigate } from 'react-router-dom';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -10,8 +11,10 @@ export default function BuildSection() {
 
     const [isButton, setIsButton] = useState(false);
 
+    const route = useNavigate();
+
     const handleClick = () => {
-        console.log("jkdskfnkjsd")
+        route("/contactMe")
     }
 
     useGSAP(()=>{
