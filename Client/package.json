@@ -33,6 +33,7 @@
     "react": "^19.2.5",
     "react-bits": "^1.0.5",
     "react-dom": "^19.2.5",
+    "react-hook-form": "^7.86.0",
     "react-router-dom": "^7.15.1",
     "shadcn": "^4.7.0",
     "split-type": "^0.3.4",
