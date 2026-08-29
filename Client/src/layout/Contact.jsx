@@ -8,7 +8,7 @@ export default function Contact() {
     <>
       <div className="w-full h-screen bg-[#f2e2c2]">
         <div className="w-full h-full flex p-2 gap-2">
-          <div className="w-35/10 h-full bg-black rounded-2xl p-5">
+          <div className="contactForm w-35/10 h-full bg-black rounded-2xl p-5">
             <div className="w-full border-b border-zinc-400 pb-2">
                 <p className="text-7xl text-right"> ✦ Contact</p>
             </div>
