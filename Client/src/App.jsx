@@ -36,7 +36,7 @@ export default function App() {
             <Route path="/" element={<Portfolio />} />
 
             <Route
-              path="/projects/:projectName"
+              path="/:projectName"
               element={<Project />}
             />
 
