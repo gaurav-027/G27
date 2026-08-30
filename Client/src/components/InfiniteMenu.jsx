@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { mat4, quat, vec2, vec3 } from 'gl-matrix';
+import { useNavigate } from 'react-router-dom';
 const discVertShaderSource = `#version 300 es
 
 uniform mat4 uWorldMatrix;
@@ -962,10 +963,12 @@ export default function InfiniteMenu({ items = [], scale = 1.0 }) {
     };
   }, [items, scale]);
 
+  const route = useNavigate();
+
   const handleButtonClick = () => {
     if (!activeItem?.link) return;
     if (activeItem.link) {
-      window.open(activeItem.link, '_blank');
+      route(activeItem.link)
     } else {
       console.log('Internal route:', activeItem.link);
     }
