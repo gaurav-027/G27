@@ -5,31 +5,31 @@ export default function Project() {
 
   const items = [
   {
-    image: '/G27/project1.png',
+    image: '/project1.png',
     link: '/lancerflow',
   },
   {
-    image: '/G27/project2.png',
+    image: '/project2.png',
     link: '/xitamin',
   },
   {
-    image: '/G27/project3.png',
+    image: '/project3.png',
     link: '/vidio',
   },
   {
-    image: '/G27/project5.png',
+    image: '/project5.png',
     link: '/G27',
   },
   {
-    image: '/G27/project4.png',
+    image: '/project4.png',
     link: '/wanderlust',
   },
   {
-    image: '/G27/project6.png',
+    image: '/project6.png',
     link: '/joybox',
   },
   {
-    image: '/G27/project7.png',
+    image: '/project7.png',
     link: '/manojKirana',
   }
 ];
