@@ -31,7 +31,7 @@ export default function App() {
       {showLoader && <Loading onComplete={handleLoaderComplete} />}
 
       <div ref={contentRef}>
-        <Router basename="/g27">
+        <Router basename="/G27">
           <Routes>
             <Route path="/" element={<Portfolio />} />
 
