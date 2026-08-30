@@ -70,7 +70,7 @@ function makeCardTexture(frontUrl, backUrl) {
 }
 
 function CardModel({ frontImage, backImage }) {
-  const { scene } = useGLTF("/card.glb");
+  const { scene } = useGLTF("/g27/card.glb");
 
   const cardTexture = useMemo(() => {
     return makeCardTexture(frontImage, backImage);
@@ -117,7 +117,7 @@ export default function Model() {
         <directionalLight position={[-3, 2, -4]} intensity={0.8} />
 
         <Bounds fit clip observe margin={0.75}>
-          <CardModel frontImage="/frontPart.png" backImage="/backPart.png" />
+          <CardModel frontImage="/g27/frontPart.png" backImage="/g27/backPart.png" />
         </Bounds>
 
         <OrbitControls
