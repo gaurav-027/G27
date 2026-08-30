@@ -24,9 +24,7 @@ export default function Contact() {
     <>
       <div className="w-full h-screen bg-[#f2e2c2]">
         <div className="w-full h-full flex p-2 gap-2">
-          {/* CONTACT FORM */}
-          <div className="contactForm w-35/10 h-full bg-black rounded-2xl p-5 text-[#f2e2c2]">
-            {/* Header */}
+          <div className="contactForm w-30/10 h-full bg-black rounded-2xl p-5 text-[#f2e2c2]">
             <div className="w-full border-b border-zinc-700 pb-3 mb-5">
               <p className="text-7xl text-white text-right tracking-tight">
                 ✦ Contact
@@ -61,7 +59,6 @@ export default function Contact() {
                 )}
               </div>
 
-              {/* Email */}
               <div>
                 <label className="block text-sm text-zinc-400 mb-1">
                   EMAIL ADDRESS
@@ -89,7 +86,6 @@ export default function Contact() {
                 )}
               </div>
 
-              {/* Purpose */}
               <div>
                 <label className="block text-sm text-zinc-400 mb-1">
                   WHAT'S THIS ABOUT?
@@ -139,7 +135,6 @@ export default function Contact() {
                 )}
               </div>
 
-              {/* Message */}
               <div className="flex-1 flex flex-col">
                 <label className="block text-sm text-zinc-400 mb-1">
                   MESSAGE
@@ -167,7 +162,6 @@ export default function Contact() {
                 )}
               </div>
 
-              {/* Submit */}
               <button
                 type="submit"
                 disabled={isSubmitting}
@@ -185,7 +179,6 @@ export default function Contact() {
             </form>
           </div>
 
-          {/* REST OF YOUR LAYOUT */}
           <div className="w-35/10 h-full rounded-2xl flex flex-col gap-2">
             <div className="model w-full h-8/1 bg-zinc-700 rounded-2xl flex justify-center items-center p-10">
               <Model />
