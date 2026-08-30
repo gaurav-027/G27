@@ -140,9 +140,9 @@ export default function About() {
             </div>
           </div>
           <div ref={contentRef} className="content mt-15 flex flex-col gap-10 px-5 mb-10">
-            <p className=" text-4xl align-middle">Hi, I’m Gaurav, a passionate Full Stack MERN Developer with a strong interest in building modern, scalable, and user-friendly web applications.</p>
-            <p className="text-4xl"> I’m continuously improving my skills, working on real-world projects, and looking for opportunities where I can contribute, learn, and grow as a Software Developer.</p>
-            <p className="text-4xl">I enjoy solving problems through code, exploring new technologies, and creating applications that deliver a seamless user experience. Every project is an opportunity to learn something new and become a better developer.</p>
+            <p className=" text-3xl align-middle">Hi, I’m Gaurav, a passionate Full Stack MERN Developer with a strong interest in building modern, scalable, and user-friendly web applications.</p>
+            <p className="text-3xl"> I’m continuously improving my skills, working on real-world projects, and looking for opportunities where I can contribute, learn, and grow as a Software Developer.</p>
+            <p className="text-3xl">I enjoy solving problems through code, exploring new technologies, and creating applications that deliver a seamless user experience. Every project is an opportunity to learn something new and become a better developer.</p>
           </div>
         </div>
       </div>

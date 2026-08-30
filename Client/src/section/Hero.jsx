@@ -37,6 +37,11 @@ export default function Hero() {
         y: e.clientY,
       });
     });
+
+    gsap.from(".character-bg",{
+      scale:1.2,
+      duration:1
+    })
   });
 
   return (

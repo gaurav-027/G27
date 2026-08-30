@@ -22,7 +22,7 @@ export default function Contact() {
 
   return (
     <>
-      <div className="w-full h-screen bg-[#f2e2c2]">
+      <div className="w-full h-screen bg-[#f2e2c2] overflow-hidden">
         <div className="w-full h-full flex p-2 gap-2">
           <div className="contactForm w-30/10 h-full bg-black rounded-2xl p-5 text-[#f2e2c2]">
             <div className="w-full border-b border-zinc-700 pb-3 mb-5">
