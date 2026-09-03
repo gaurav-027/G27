@@ -1,7 +1,6 @@
 import image1 from "../assets/project-1.png";
 import image2 from "../assets/project-2.png";
 import image3 from "../assets/project-3.png";
-import image4 from "../assets/project-4.png";
 import image5 from "../assets/project-5.png";
 import image6 from "../assets/project-6.png";
 import image7 from "../assets/project-7.png";

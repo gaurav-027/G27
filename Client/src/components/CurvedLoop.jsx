@@ -96,18 +96,16 @@ const CurvedLoop = ({
     dirRef.current = velRef.current > 0 ? 'right' : 'left';
   };
 
-  const cursorStyle = interactive ? (dragRef.current ? 'grabbing' : 'grab') : 'auto';
-
   return (
     <div
-      className="h-full flex relative bottom-8 justify-center w-full"
-      style={{ visibility: ready ? 'visible' : 'hidden', cursor: cursorStyle }}
+      className={`h-full flex relative bottom-6 justify-center w-full ${interactive ? 'cursor-grab active:cursor-grabbing' : ''}`}
+      style={{ visibility: ready ? 'visible' : 'hidden' }}
       onPointerDown={onPointerDown}
       onPointerMove={onPointerMove}
       onPointerUp={endDrag}
       onPointerLeave={endDrag}>
       <svg
-        className="select-none w-full overflow-visible block aspect-[100/12] text-[6rem] font-bold uppercase leading-none"
+        className="select-none w-full overflow-visible block aspect-[100/12] text-[8rem] font-bold uppercase leading-none"
         viewBox="0 0 1440 120">
         <text
           ref={measureRef}

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://gaurav-027.github.io/g27/sitemap.xml

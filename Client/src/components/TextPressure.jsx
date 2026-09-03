@@ -180,7 +180,7 @@ const TextPressure = ({
           }
         `}</style>
     );
-  }, [fontFamily, fontUrl, textColor, strokeColor, strokeWidth]);
+  }, [fontUrl, textColor, strokeColor, strokeWidth]);
 
   return (
     <div

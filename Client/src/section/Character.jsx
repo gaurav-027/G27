@@ -6,6 +6,9 @@ import Dock from "../components/Dock";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 
+const TRAIL_COUNT = 7;
+const TRAIL_INDICES = Array.from({ length: TRAIL_COUNT }, (_, i) => i);
+
 export default function Character() {
 
   useGSAP(()=>{
@@ -45,7 +48,7 @@ export default function Character() {
   const hitCanvasRef = useRef(null);
 
   const trailRef = useRef(
-    Array.from({ length: 7 }, () => ({
+    Array.from({ length: TRAIL_COUNT }, () => ({
       x: -9999,
       y: -9999,
     }))
@@ -66,10 +69,7 @@ export default function Character() {
       if (baseImage.naturalWidth && baseImage.naturalHeight) {
         const imageRatio = baseImage.naturalWidth / baseImage.naturalHeight;
         const containerRatio = rect.width / rect.height;
-        let width = rect.width;
-        let height = rect.height;
-        let left = 0;
-        let top = 0;
+        let width, height, left = 0, top = 0;
 
         if (containerRatio > imageRatio) {
           height = rect.height;
@@ -284,15 +284,18 @@ export default function Character() {
       ref={containerRef}
       className="relative w-full h-[100svh] min-h-[520px] overflow-hidden"
     >
-      {/* Base Image */}
+      {/* Base LCP Image */}
       <img
         ref={baseImageRef}
         src={normal}
-        alt=""
+        alt="Gaurav Kumar - Character Visual"
+        fetchPriority="high"
+        loading="eager"
+        decoding="async"
         className="absolute inset-0 w-full h-full object-contain object-center pointer-events-none select-none"
       />
 
-      {trailRef.current.map((_, index) => (
+      {TRAIL_INDICES.map((index) => (
         <img
           key={index}
           ref={(el) => {
@@ -300,6 +303,9 @@ export default function Character() {
           }}
           src={helmet}
           alt=""
+          aria-hidden="true"
+          loading="eager"
+          decoding="async"
           className="absolute inset-0 w-full h-full object-contain object-center pointer-events-none select-none will-change-[clip-path,opacity]"
           style={{
             clipPath: "circle(0px at 0px 0px)",
@@ -317,6 +323,9 @@ export default function Character() {
         ref={revealRef}
         src={helmet}
         alt=""
+        aria-hidden="true"
+        loading="eager"
+        decoding="async"
         className="absolute inset-0 w-full h-full object-contain object-center pointer-events-none select-none will-change-[clip-path]"
         style={{
           clipPath: "circle(0px at 0px 0px)",
@@ -343,7 +352,7 @@ export default function Character() {
         }}
       />
     </div>
-    <div className="dock w-full h-14 sm:h-16 md:h-18 absolute inset-x-0 bottom-[max(1rem,env(safe-area-inset-bottom))] sm:bottom-8 px-4">
+    <div className="dock w-full h-14 sm:h-16 md:h-18 absolute inset-x-0 bottom-[max(1rem,env(safe-area-inset-bottom))] sm:bottom-8 px-2 sm:px-4 z-[75]">
       <Dock/>
     </div>
     </>

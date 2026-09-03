@@ -37,11 +37,11 @@ export default function About() {
         pin: true,
         scrub: true,
         onUpdate: (e) => {
-          // console.log(Math.floor(e.progress * 20))
+          console.log(Math.floor(e.progress * 20))
 
           const scrollValue = Math.floor(e.progress * 60);
 
-          const imageIndex = Math.floor(e.progress * 19)
+          const imageIndex = Math.floor(e.progress * 60)
           firstImageRef.current.src = firstImageArray[imageIndex];
           secondImageRef.current.src = secondImageArray[imageIndex]
           thirdImageRef.current.src = thirdImageArray[imageIndex]

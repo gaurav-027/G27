@@ -1,14 +1,12 @@
-import React from 'react'
+import { useEffect } from "react";
 import Hero from '../section/Hero'
 import Word from '../section/Word'
 import About from '../section/About'
 import Signature from '../section/Signature'
 import Project from '../section/Project'
-import Message from '../section/Message'
 import Skills from '../section/Skills'
 import BuildSection from '../section/BuildSection'
 import Lenis from "lenis";
-import { useEffect } from "react";
 
 export default function Portfolio() {
 

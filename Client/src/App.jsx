@@ -1,11 +1,13 @@
-import React, { useState, useRef } from "react";
+import { useState, useRef, Suspense, lazy } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import gsap from "gsap";
 
-import NotFound from "./section/NotFound";
 import Portfolio from "./layout/Portfolio";
-import Project from "./layout/Project";
-import Contact from "./layout/Contact";
 import Loading from "./layout/Loading";
+
+const Project = lazy(() => import("./layout/Project"));
+const Contact = lazy(() => import("./layout/Contact"));
+const NotFound = lazy(() => import("./section/NotFound"));
 
 export default function App() {
   const [showLoader, setShowLoader] = useState(true);
@@ -14,16 +16,18 @@ export default function App() {
   const handleLoaderComplete = () => {
     setShowLoader(false);
 
-    gsap.fromTo(
-      contentRef.current,
-      { y: 40, opacity: 0 },
-      {
-        y: 0,
-        opacity: 1,
-        duration: 1,
-        ease: "power3.out",
-      }
-    );
+    if (contentRef.current) {
+      gsap.fromTo(
+        contentRef.current,
+        { y: 40, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 1,
+          ease: "power3.out",
+        }
+      );
+    }
   };
 
   return (
@@ -31,24 +35,26 @@ export default function App() {
       {showLoader && <Loading onComplete={handleLoaderComplete} />}
 
       <div ref={contentRef}>
-        <Router basename="/" >
-          <Routes>
-            <Route path="/" element={<Portfolio />} />
+        <Router basename="/">
+          <Suspense fallback={<div className="w-full h-screen bg-[#0c0c0f]" />}>
+            <Routes>
+              <Route path="/" element={<Portfolio />} />
 
-            <Route
-              path="/:projectName"
-              element={<Project />}
-            />
+              <Route
+                path="/:projectName"
+                element={<Project />}
+              />
 
-            <Route
-              path="/contactMe"
-              element={<Contact />}
-            />
+              <Route
+                path="/contactMe"
+                element={<Contact />}
+              />
 
-            <Route path="/l" element={<Loading />} />
+              <Route path="/l" element={<Loading />} />
 
-            <Route path="*" element={<NotFound />} />
-          </Routes>
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </Suspense>
         </Router>
       </div>
     </>

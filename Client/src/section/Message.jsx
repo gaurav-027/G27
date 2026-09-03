@@ -1,5 +1,3 @@
-import React from 'react'
-
 export default function Message() {
   return (
     <div className='w-full h-screen text-center flex justify-center items-center'>

@@ -1,4 +1,3 @@
-import React from 'react'
 import dockItems from '../constant/DockItem.jsx'
 
 export default function Dock() {
