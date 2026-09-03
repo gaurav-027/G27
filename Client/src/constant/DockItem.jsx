@@ -40,7 +40,7 @@ const dockItems = [
     {
         name : "Resume",
         icon : <FileTextIcon/>,
-        goto : "https://drive.google.com/file/d/1jZdaL8lzrkmRxTnlynklYevmvOt4NAb8/view?usp=sharing"
+        goto : "https://drive.google.com/file/d/1dyWKtJnror6zdC_seYyBG48FS6HNE6ab/view?usp=sharing"
     },
 
 ]
