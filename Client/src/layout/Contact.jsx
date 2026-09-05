@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import CircularText from "../components/CircularText";
 import CurvedLoop from "../components/CurvedLoop";
 import Model from "../components/Model";
+import axios from "axios";
 
 export default function Contact() {
   const {
@@ -13,8 +14,16 @@ export default function Contact() {
   } = useForm();
 
   const onSubmit = async (data) => {
-    console.log(data);
-    // API / Email service integration point
+
+    try {
+      const response = await axios.post("http://localhost:6969/sendEmail",data)
+      console.log(response.data)
+    } catch (error) {
+      console.error(
+      "Email sending failed:",
+      error.response?.data || error.message
+    );
+    }
     reset();
   };
 
